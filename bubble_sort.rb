@@ -18,14 +18,8 @@ def bubble_sort (array)
     left - right
   end
 end
+
 def swap(array, index_1, index_2)
   array[index_1], array[index_2] = array[index_2], array[index_1]
   array
 end
-
-puts bubble_sort([10,3,2,4,9,8,5,7,6,1,4]).to_s
-
-new = bubble_sort_by (["hi","hello","hey", "this is the longest one", "a"]) do |left,right|
-  right.length - left.length
-end
-puts new

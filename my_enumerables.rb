@@ -47,4 +47,18 @@ module Enumerable
     end
     return true
   end
+  
+  def my_count
+    if block_given?
+      total = 0
+      self.each do |i|
+        if yield i
+          total += 1
+        end
+      end
+      return total
+    else
+      return self.length
+    end
+  end
 end

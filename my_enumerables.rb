@@ -29,4 +29,13 @@ module Enumerable
     end
     return true
   end
+  
+  def my_any?
+    self.my_each do |i|
+      if yield i
+        return true
+      end
+    end
+    return false
+  end
 end

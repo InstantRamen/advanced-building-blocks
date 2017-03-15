@@ -69,4 +69,22 @@ module Enumerable
     end
     return new_array
   end
+  
+  def my_inject
+    result = 0
+    self.my_each_with_index do |item, index|
+      if(index == 0)
+        result = item
+      else
+        result = yield result, item
+      end
+    end
+    return result
+  end
+end
+
+def multiply_els(arr)
+  return arr.my_inject do |result, item|
+    result * item
+  end
 end

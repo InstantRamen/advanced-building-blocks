@@ -61,4 +61,12 @@ module Enumerable
       return self.length
     end
   end
+  
+  def my_map
+    new_array = []
+    self.my_each do |i|
+      new_array.push yield i
+    end
+    return new_array
+  end
 end

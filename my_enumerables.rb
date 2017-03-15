@@ -12,8 +12,6 @@ module Enumerable
   end
   
   def my_select
-    # take as block that should return true or false
-    # sort through the items in self to and return an array of items for which the statement is true
     new_array = []
     self.my_each do |item|
       if yield item
@@ -21,5 +19,14 @@ module Enumerable
       end
     end
     return new_array
+  end
+  
+  def my_all?
+    self.my_each do |i|
+      if !yield i
+        return false
+      end
+    end
+    return true
   end
 end
